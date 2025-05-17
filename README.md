@@ -29,10 +29,7 @@ You can include more than one supervisor and/or more than one student:
 #unitn_cover(
   // ...
   ("Albus Dumbledore", "Severus Snape"),
-  (
-    ("Harry Potter", 54891),
-    ("Perry Hotter", 84932),
-  ),
+  ("Harry Potter", "Perry Hotter"),
   // ...
 )
 ```
