@@ -64,7 +64,7 @@
 
     #for s in supervisors [
       #s
-      
+  
     ]
     
     #colbreak()
@@ -78,10 +78,16 @@
     }
     #text(size: 13pt)[*Graduate Student#if students.len() == 1 [] else [s]*]
     
-    #for s in students [
-      #s
-      
-    ]
+    #for s in students {
+      if type(s) == array [
+        #s.at(0)
+
+        #s.at(1)
+
+      ] else [
+        #s
+      ]
+    }
   ]
 
   #v(.5fr)

@@ -5,11 +5,10 @@
   "Bachelor's Degree in Positive Thinking Engineering",
   "Deconstructing the Concept of Happiness: A Study on the Role of Hope in Shaping Life Satisfaction",
   "Jane Doe",
-  [
-    John Doe
-
-    690420
-  ],
+  (
+    ("John Doe", 690420),
+    ("John Souls", 123456)
+  ),
   examination_day: "2030/05/16",
   academic_year: 2030
 )
