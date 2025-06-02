@@ -7,7 +7,7 @@
 #let unitn_cover = (department, degree, title, supervisors, students, academic_year: none, examination_day: none) => [
   #set text(font: "New Computer Modern")
 
-  #let bkg_img = image("unitn_bw.jpg", height: 500pt)
+  #let bkg_img = image("unitn_bw.png", height: 500pt)
   #set page(
     background: move(
       dy: 200pt, dx: 100pt,
