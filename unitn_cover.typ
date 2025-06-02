@@ -18,23 +18,23 @@
       })),
     )
   )
-  
+
   #figure(
     image("unitn.svg", width: 30%)
   )
-  
+
   #set align(center)
-  
+
   #set text(size: 20pt)
   #v(1em)
   #smallcaps[University of Trento]
   #v(1.5em)
-  
+
   #set text(size: 15pt)
   #smallcaps[#department]
-  
+
   #smallcaps[#degree]
-  
+
   #set text(size: 13pt)
 
   #if academic_year == none {
@@ -46,17 +46,17 @@
   #smallcaps[
     #pad(top: 15pt, bottom: 40pt)[Academic Year #academic_year]
   ]
-  
+
   #set text(size: 20pt)
   #title
-  
+
   #v(1fr)
-  
+
   #columns(2)[
     #set text(size: 13pt)
     #set align(top+start)
     #set par(spacing: 10pt)
-    
+
     #if type(supervisors) != array {
       supervisors = (supervisors, )
     }
@@ -64,20 +64,20 @@
 
     #for s in supervisors [
       #s
-  
+
     ]
-    
+
     #colbreak()
-    
+
     #set text(size: 13pt)
     #set par(spacing: 6pt)
     #set align(top+end)
-    
+
     #if type(students) != array {
       students = (students, )
     }
     #text(size: 13pt)[*Graduate Student#if students.len() == 1 [] else [s]*]
-    
+
     #for s in students {
       if type(s) == array [
         #s.at(0)
