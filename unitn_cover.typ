@@ -20,7 +20,10 @@
   )
 
   #figure(
-    image("unitn.svg", width: 30%)
+    image("unitn.svg", width: 30%),
+    // prevent conflict with default figure numbering
+    kind: "cover-backgroud",
+    supplement: "",
   )
 
   #set align(center)
