@@ -35,7 +35,7 @@
 
   #set text(size: 15pt)
   #smallcaps[#department]
-
+  #v(.5em)
   #smallcaps[#degree]
 
   #set text(size: 13pt)
@@ -51,7 +51,10 @@
   ]
 
   #set text(size: 20pt)
-  #title
+
+  #v(.5fr)
+
+  #par(justify: false, smallcaps(title))
 
   #v(1fr)
 
