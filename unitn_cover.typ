@@ -66,11 +66,11 @@
     #if type(supervisors) != array {
       supervisors = (supervisors, )
     }
+
     #text(size: 13pt)[*Supervisor#if supervisors.len() == 1 [] else [s]*]
 
     #for s in supervisors [
-      #s
-
+      #par(first-line-indent: 0pt, s)
     ]
 
     #colbreak()
