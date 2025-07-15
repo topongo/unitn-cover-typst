@@ -83,19 +83,48 @@
 
     #if type(students) != array {
       students = (students, )
+    } else if students.len() == 0 {
+      students = ()
+    } else if students.len() == 2 and type(students.at(0)) != array and type(students.at(0)) in (content, str) and type(students.at(1)) == int {
+      students = (students, )
     }
-    #text(size: 13pt)[*Graduate Student#if students.len() == 1 [] else [s]*]
+    #if students.len() != 0 {
+      text(size: 13pt)[*Graduate Student#if students.len() == 1 [] else [s]*]
+    }
 
-    #for s in students {
-      if type(s) == array [
-        #s.at(0)
+    // #students
 
-        #s.at(1)
-
-      ] else [
+    #let display-student(s, inline: false) = {
+      if type(s) == array and s.len() == 2 {
+        if inline [
+          #par[#s.at(0) -- #s.at(1)]
+        ] else [
+          #par[#s.at(0)]
+          #par[#s.at(1)]
+        ]
+      } else [
         #s
       ]
     }
+
+    #if students.len() == 1 {
+      display-student(students.at(0))
+    } else {
+      for s in students {
+        display-student(s, inline: true)
+      }
+    }
+
+    // #for s in students {
+    //   if type(s) == array [
+    //     #s.at(0)
+    //
+    //     #s.at(1)
+    //
+    //   ] else [
+    //     #s
+    //   ]
+    // }
   ]
 
   #v(.5fr)
