@@ -4,20 +4,22 @@
   place(top, block(..size, fill: color))
 })
 
-#let unitn_cover = (department, degree, title, supervisors, students, academic_year: none, examination_day: none) => [
+#let unitn_cover = (department, degree, title, supervisors, students, academic_year: none, examination_day: none, watermark: true) => [
   #set text(font: "New Computer Modern")
 
-  #let bkg_img = image("unitn_bw.png", height: 500pt)
-  #set page(
-    background: move(
-      dy: 200pt, dx: 100pt,
-      rotate(-20deg, layout(bounds => {
-        let size = measure(bkg_img, ..bounds)
-        bkg_img
-        place(top, block(..size, fill: rgb(255,255,255,240)))
-      })),
+  #if watermark {
+    let bkg_img = image("unitn_bw.png", height: 500pt)
+    set page(
+      background: move(
+        dy: 200pt, dx: 100pt,
+        rotate(-20deg, layout(bounds => {
+          let size = measure(bkg_img, ..bounds)
+          bkg_img
+          place(top, block(..size, fill: rgb(255,255,255,240)))
+        })),
+      )
     )
-  )
+  }
 
   #figure(
     image("unitn.svg", width: 30%),
